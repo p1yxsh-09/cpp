@@ -13,9 +13,9 @@ int main()
   while (n != 0)
   {
 
-    int bit = n % 10;
+    int digit = n % 10;
 
-    if (bit == 1)
+    if (digit == 1)
     {
 
       ans = ans + pow(2, i);
