@@ -21,5 +21,14 @@ int main()
 
   cin >> n;
 
+  if (isprime(n))
+  {
+    cout << "Is a Prime Number" << endl;
+  }
+  else
+  {
+    cout << "Not a Prime Number " << endl;
+  }
+
   return 0;
 }
