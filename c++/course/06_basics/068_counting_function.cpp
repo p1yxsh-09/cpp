@@ -11,7 +11,7 @@ void printCounting(int n)
     cout << i << endl;
   }
 }
-// jab ek function sirf print krega aur kuch bhi retur nahi karega toh for that we will use void
+// jab ek function sirf print krega aur kuch bhi return nahi karega toh for that we will use void
 
 int main()
 {
