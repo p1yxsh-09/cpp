@@ -2,13 +2,13 @@
 #include <math.h>
 using namespace std;
 
-int sqRoot(int value)
+long long int sqRoot(int value)
 {
   int start = 0;
   int end = value;
-  int ans = -1;
+  long long int ans = -1;
 
-  int mid = start + (end - start) / 2;
+  long long int mid = start + (end - start) / 2;
 
   while (start <= end)
   {
@@ -27,7 +27,7 @@ int sqRoot(int value)
     }
     mid = start + (end - start) / 2;
   }
-  return mid;
+  return ans;
 }
 
 int main()
