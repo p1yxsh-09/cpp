@@ -108,7 +108,7 @@ int search(int* arr, int n, int k) {
         else if(k > arr[0] && arr[mid] > k) e = mid -1;
         else return mid;
     }
-    return -1;
+    return -1; 
 }
 
 
