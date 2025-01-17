@@ -94,3 +94,22 @@ int main()
   cout << result << endl;
   return 0;
 }
+
+//   second approach
+/*
+int search(int* arr, int n, int k) {
+    // Write your code here.
+    int s = 0 , e = n - 1 , mid;
+    while( s <= e ){
+        mid = s + (e - s)/2;
+        if(k < arr[0]  && arr[mid] < k ) s = mid + 1;
+        else if(k < arr[0] && arr[mid] > k) e = mid -1;
+        else if(k > arr[0] && arr[mid] < k) s = mid + 1;
+        else if(k > arr[0] && arr[mid] > k) e = mid -1;
+        else return mid;
+    }
+    return -1;
+}
+
+
+*/
