@@ -22,6 +22,7 @@ bool isPossibleSol(vector<int> &arr, int n, int m, int mid)
       {
         return false;
       }
+      pageSum = 0;
 
       pageSum = arr[i];
     }
