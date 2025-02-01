@@ -8,7 +8,7 @@ int firstOcc(int arr[], int size, int key)
   int e = size - 1;
   int ans = -1;
 
-  int mid = s + (e + s) / 2;
+  int mid = s + (e - s) / 2;
 
   while (s <= e)
   {
@@ -26,10 +26,9 @@ int firstOcc(int arr[], int size, int key)
       s = mid + 1;
     }
 
-    mid = s + (e + s) / 2;
-
-    return ans;
+    mid = s + (e - s) / 2;
   }
+  return ans;
 }
 int lastOcc(int arr[], int size, int key)
 {
@@ -37,7 +36,7 @@ int lastOcc(int arr[], int size, int key)
   int e = size - 1;
   int ans = -1;
 
-  int mid = s + (e + s) / 2;
+  int mid = s + (e - s) / 2;
 
   while (s <= e)
   {
@@ -55,10 +54,9 @@ int lastOcc(int arr[], int size, int key)
       s = mid + 1;
     }
 
-    mid = s + (e + s) / 2;
-
-    return ans;
+    mid = s + (e - s) / 2;
   }
+  return ans;
 }
 int main()
 {
@@ -67,5 +65,7 @@ int main()
   int totalocc = lastOcc(even, 10, 3) - firstOcc(even, 10, 3) + 1;
 
   cout << "The total occurance of :" << target << " is :" << totalocc << endl;
+  cout << "The first occurance of :" << target << " is :" << firstOcc(even, 10, 3) << endl;
+  cout << "The last occurance of :" << target << " is :" << lastOcc(even, 10, 3) << endl;
   return 0;
 }
