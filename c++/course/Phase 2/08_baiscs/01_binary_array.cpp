@@ -39,4 +39,4 @@ int main()
   cout << "Index of 10 is :" << oddIndex << endl;
 
   return 0;
-}
+} 
