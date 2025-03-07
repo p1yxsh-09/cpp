@@ -2,52 +2,46 @@
 #include <math.h>
 using namespace std;
 
-void selectionSort(int arr[], int size)
-{
+
+void sortedArray(int arr[] , int size ){
 
   for (int i = 0; i < size - 1; i++)
   {
     int minIndex = i;
-
-    for (int j = i + 1; j < size; j++)
+  
+  for (int j = i + 1; j < size; j++)  
+  {
+    if (arr[minIndex] > arr[j])
     {
-      if (arr[minIndex] > arr[j])
-      {
-        minIndex = j; // minindex is updated
-      }
+      minIndex = j;
     }
-    swap(arr[minIndex], arr[i]);
+
+    swap(arr[minIndex] , arr[i]) ;
+    
   }
+  
+}
 }
 
-void printArray(int arr[], int size)
-{
+void printArray(int arr[] , int size) {
 
   for (int i = 0; i < size; i++)
   {
-    cout << arr[i] << " ";
+    cout << arr[i] << " " ;
+
   }
+
   cout << endl;
+  
 }
-int main()
-{
-  int size;
+int main(){
 
-  cout << "Enter the size : ";
+  int arr[5] = {12 , 10 , 8 , 11 , 9};
 
-  cin >> size;
+  sortedArray(arr,5);
 
-  int arr[100];
-
-  cout << "Enter the array Elements :";
-
-  for (int i = 0; i < size; i++)
-  {
-    cin >> arr[i];
-  }
-  selectionSort(arr, size);
-
-  printArray(arr, size);
+  printArray(arr,5);
 
   return 0;
+
 }
