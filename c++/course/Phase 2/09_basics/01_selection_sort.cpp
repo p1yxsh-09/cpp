@@ -33,7 +33,7 @@ void printArray(int arr[], int size)
 int main()
 {
 
-  int arr[5] = {12, 10, 8, 11, 9};
+  int arr[5] = {13, 14, 18, 9, 2};
 
   sortedArray(arr, 5);
 
@@ -41,3 +41,5 @@ int main()
 
   return 0;
 }
+
+// 21:16
