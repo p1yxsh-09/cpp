@@ -39,7 +39,5 @@ int main()
 
   print(ans);
 
-  cout << v.size();
-
   return 0;
 }
