@@ -9,8 +9,17 @@ bool isPalindrome(char name[], int n)
 
   while (start <= end)
   {
-
-    if (name[start] == name[end])
+    if (isalnum(name[start]))
+    {
+      start++;
+      continue;
+    }
+    else if (isalnum(name[end]))
+    {
+      end--;
+      continue;
+    }
+    else if (name[start] == name[end])
     {
       start++;
       end--;
@@ -22,6 +31,20 @@ bool isPalindrome(char name[], int n)
   }
   return 1;
 }
+
+char toLowerCase(char ch)
+{
+  if (ch >= 'A' && ch <= 'Z')
+  {
+    char temp = ch - 'A' + 'a';
+    return temp;
+  }
+  else
+  {
+    return ch;
+  }
+}
+
 int length(char name[])
 {
   int count = 0;
@@ -49,5 +72,6 @@ int main()
   cout << "And you have " << len << " Characters in your name" << endl;
 
   cout << "Palindrome or not " << isPalindrome(name, len) << endl;
+
   return 0;
 }
