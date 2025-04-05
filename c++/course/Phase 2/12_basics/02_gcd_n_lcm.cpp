@@ -24,10 +24,19 @@ int gcd(int a, int b)
 
   return a;
 }
+int lcm(int a, int b)
+{
+  int g = gcd(a, b);
 
+  int l = (a * b) / g;
+
+  return l;
+}
 int main()
 {
   cout << gcd(20, 28) << endl;
+
+  cout << lcm(20, 28) << endl;
 
   return 0;
 }
