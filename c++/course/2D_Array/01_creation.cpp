@@ -6,10 +6,7 @@ int main()
 
   int arr[3][4];
 
-  // if we add input manually then it will run in row wise 
-  
-  
-  
+  // if we add input manually then it will run in row wise
 
   // takin input as row wise
   for (int row = 0; row < 3; row++)
@@ -38,6 +35,7 @@ int main()
     {
       cout << arr[row][col] << " ";
     }
+    cout << endl;
     cout << endl;
   }
 
