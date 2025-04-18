@@ -7,4 +7,3 @@ int main()
   cout << "  Memory Adrees of a is : " << &a << endl;
   return 0;
 }
-ok
