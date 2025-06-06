@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 void pattern1(int n)
 {
   for (int i = 1; i <= n; i++)
@@ -356,14 +357,65 @@ void pattern21(int n)
       cout << "*";
     }
     // spaces
-    for (int j = 1; j <= 2 * (n - stars); j++)
+    int spaces = (i <= n) ? 2 * (n - i) : 2 * (i - n);
+
+    for (int j = 1; j <= spaces; j++)
     {
       cout << " ";
     }
+
     // stars
     for (int j = 1; j <= stars; j++)
     {
       cout << "*";
+    }
+    cout << endl;
+    if (i > n)
+    {
+      spaces += 2;
+    }
+  }
+}
+void pattern22(int n)
+{
+  for (int i = 1; i <= n; i++)
+  {
+    for (int j = 1; j <= n; j++)
+    {
+      if (i == 1 || i == n || j == 1 || j == n)
+      {
+        cout << "* ";
+      }
+      else
+      {
+        cout << "  ";
+      }
+    }
+    cout << endl;
+  }
+}
+void pattern23(int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      if (i == 0 || i == n - 1 || j == 0 || j == n - 1)
+      {
+        cout << "4";
+      }
+      else if (i == 1 || j == 1 || i == n - 2 || j == n - 2)
+      {
+        cout << "3";
+      }
+      else if (i == 2 || j == 2 || i == n - 3 || j == n - 3)
+      {
+        cout << "2";
+      }
+      else
+      {
+        cout << "1";
+      }
     }
     cout << endl;
   }
@@ -376,7 +428,7 @@ int main()
   {
     int n;
     cin >> n;
-    pattern10(n);
+    pattern1(n);
   }
 
   return 0;
