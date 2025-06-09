@@ -1,7 +1,13 @@
 #include <iostream>
 #include <utility>
-#include <string>
 #include <vector>
+#include <list>
+#include <string>
+#include <deque>
+#include <stack>
+#include <queue>
+#include <set>
+#include <map>
 using namespace std;
 
 void explainPair()
@@ -123,7 +129,7 @@ void explainVector()
   }
 
   // inserting an element
-  vector<int> v(2, 100); // {100, 100}
+  vector<int> v11(2, 100); // {100, 100}
 
   // way 2
   v.insert(v.begin(), 300); // {300,100,100}
@@ -142,11 +148,273 @@ void explainVector()
   v1.swap(v2) --> v1 = {3,4} and v2 = {1,2}
   */
 
-  v3.empty()  ;// if its empty return ture if not retrurn false;
+  // v3.empty(); // if its empty return ture if not retrurn false;
+}
+void explainList()
+{
+  list<int> ls;
+
+  ls.push_back(2);    // {2}
+  ls.emplace_back(4); // {2,4}
+
+  // btter than insert in vector
+  ls.push_front(5); // {5,2,4}
+
+  ls.emplace_front(); // {2,4}
+
+  // rest functions same as vector
+  // begin , end , rebegin , rend , clear , insert ,size, swap
+}
+void explainDeque()
+{
+  deque<int> dq;
+  dq.push_back(1);     // {1}
+  dq.emplace_back(2);  // {1,2}
+  dq.push_front(3);    // {3,1,2}
+  dq.emplace_front(4); // {4,3,1,2}
+
+  dq.pop_back();  //{3,4,1}
+  dq.pop_front(); // {4,1}
+
+  dq.back();  // {1}
+  dq.front(); // {4}
+
+  // rest functions as vector
+  // begin , end , rend , rbegin , clear , insert , size ,swap
+}
+void explainStack()
+{
+  // follows LIFO - LAST IN FIRST OUT
+  stack<int> st;
+  st.push(1);
+  st.push(2);
+  st.push(3);
+  st.push(4);
+  st.push(5);
+
+  cout << st.top() << endl; //  5  "ST[2] is invalid here"
+
+  st.pop(); // {4,3,2,1}
+
+  cout << st.size() << endl; // 4
+
+  cout << st.top() << endl; // 4
+
+  cout << st.empty() << endl; // false
+
+  // swap items
+  stack<int> st1, st2;
+  st1.swap(st2);
+}
+void explainQueue()
+{
+  queue<int> q;
+  q.push(1);
+  q.push(2);
+  q.push(3);
+  q.push(4);
+  q.push(5);
+
+  q.back() += 5;
+
+  cout << q.back() << endl;
+
+  cout << q.front() << endl;
+
+  q.pop();
+
+  cout << q.front() << endl;
+}
+void explainPQ()
+{
+  priority_queue<int> pq;
+
+  pq.push(5);
+  pq.push(8);
+  pq.push(2);
+  pq.push(9);
+  pq.push(10);
+
+  cout << pq.top() << endl; // 10
+
+  pq.pop();
+
+  cout << pq.top() << endl; // 9
+
+  // same size swap as others
+
+  // Minimum Heap
+
+  priority_queue<int, vector<int>, greater<int>> pq1;
+  pq1.push(5);
+  pq1.push(2);
+  pq1.push(8);
+  pq1.push(1);
+
+  cout << pq1.top() << endl; // 1
+}
+void expalinSet()
+{
+  set<int> st;
+
+  st.insert(1);
+  st.insert(1);
+  st.insert(2);
+  st.insert(3);
+  st.insert(4);
+  st.insert(56);
+  st.insert(5);
+
+  // functionality of insert in vector can be used also,that only increases efficiency
+  // begin() , end() , empty() ,swap() are same
+
+  // {1,2,3,4,5,56}
+  auto it = st.find(3);
+
+  auto it = st.find(6); // will return the st.end() which means address of right after the last val
+
+  st.erase(5); // erase 5 in logarithmic time
+
+  int cnt = st.count(1);
+
+  auto it = st.find(3);
+
+  st.erase(it); // it takes constant line
+
+  auto it1 = st.find(2);
+  auto it2 = st.find(4);
+  st.erase(it1, it2); // after erase{1,4,5} [first, last)
+
+  // LOWER BOUMD AND UPPER BOUND
+
+  auto it = st.lower_bound(2);
+
+  auto it = st.upper_bound(3);
+}
+void explainMS()
+{
+  // obeys sorted but not uniqueness
+  // can store mutiple occurances of the same element
+  multiset<int> ms;
+  ms.insert(1); //{1}
+  ms.insert(1); //{1,1}
+  ms.insert(1); //{1,1,1}
+  ms.insert(1); //{1,1,1,1}
+
+  ms.erase(1); // remove all the occcurnaces of 1
+
+  // counting all the similar multiple occurances
+
+  int cnt = ms.count(1);
+  // need to rmeove some occurances then
+
+  ms.erase(ms.find(1), next(ms.find(1), 2));
+  // erase single element
+  ms.erase(ms.find(1));
+}
+void explainUS()
+{
+
+  // obeys uniqueness but not sorted order
+  // upper and lower boumd doesnt work here rest all same as set
+  // has a better tc than set in most cases
+}
+void explainMap()
+{
+
+  // ways to initialize the map
+
+  // stored as a key value pair
+
+  // map<int, int> mpp;
+
+  // a nested pair in map
+
+  // map<int, pair<int, int>> mpp;
+
+  // another order
+
+  map<pair<int, int>, int> mpp;
+
+  // list of way in insert into a map at line 329
+  // mpp[1] = 3;
+  // mpp.emplace(std::make_pair(std::make_pair(3, 1), 4));
+  // mpp.insert(std::make_pair(std::make_pair(2, 4), 5));
+
+  // the way to add value int he map initialize at  line 337
+  mpp[{2, 3}] = 10;
+
+  // {
+  //   {1, 2},
+  //       {2, 4},
+  //       {3, 1}
+  // }
+
+  // for (auto it : mpp)
+  // {
+  //   cout << it.first << " " << it.second;
+  // }
+  // cout << mpp[1];
+  // cout << mpp[5];
 }
 
+// my way compare
+
+bool comp(pair<int, int> p1, pair<int, int> p2)
+{
+  // in these times when u have to compare paris in an array dont think baout array
+  // think about pairs to solve and u can write a my way function
+  if (p1.second < p2.second)
+    return true;
+  if (p1.second > p2.second)
+    return false;
+  // they are same sort in descendinf
+  if (p1.first > p2.first)
+    return true;
+  else
+    return false;
+}
+void extra()
+{
+  // sorting
+  // sort(a, a + n);
+
+  // hehe a is the first element and a+n refers to the next of last element
+
+  // in vector
+
+  // sort(v.begin() , v.end())
+
+  // sort in descendig order
+
+  // sort(a,a+n , greater<int>)
+
+  // sorting in pair
+
+  pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+
+  // sort it according to secnd element
+  // and if second element are same
+  // sort according to the first element in descending
+
+  // sort(a, a + n, comp; //->{4, 1} {2, 1} {1, 2}
+
+  int num1 = 7;
+  int cnt = __builtin_popcount(num1);
+
+  long long num = 1221373211267;
+
+  int cnt1 = __builtin_popcountll(num);
+
+  string s = "123";
+
+  do
+  {
+    cout << s << endl;
+  } while (next_permutation(s.begin(), s.end()));
+}
 int main()
 {
-  explainVector();
+  explainPQ();
   return 0;
 }
