@@ -9,7 +9,7 @@ void f()
   {
     return;
   }
-  cout << cnt << endl; 
+  cout << cnt << endl;
   cnt++;
   f(); // recursive Function
 }
