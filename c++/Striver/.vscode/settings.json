@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "queue": "cpp",
-    "print": "cpp"
+    "print": "cpp",
+    "__locale": "cpp",
+    "iostream": "cpp"
   }
 }
