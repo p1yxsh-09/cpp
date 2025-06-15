@@ -17,8 +17,7 @@ int main()
     mpp[arr[i]]++;
   }
 
-  // max value 
-  
-  
+  // max value
+
   return 0;
 }
