@@ -170,6 +170,7 @@ void pattern11(int n)
     cout << endl;
   }
 }
+
 void pattern12(int n)
 {
   for (int i = 1; i <= n; i++)
